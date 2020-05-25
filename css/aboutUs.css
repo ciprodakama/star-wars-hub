@@ -1,0 +1,88 @@
+.containerFlex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sfondoScopri {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 750px;
+    height: 650px;
+    min-width: 750px;
+    min-height: 650px;
+    background: rgb(52, 58, 64);
+    color: #fff;
+    border-radius: 5%;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.containterArgomenti{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.stileVignette{
+    margin-left: 20px;
+    height: 300px;
+    min-height:300px;
+    width: 520px;
+    min-width: 520px;
+    border-radius: 10%;
+}
+
+.marginiTesto{
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+}
+
+.immagineProfilo{
+    border-radius: 10%;
+    align-content: center;
+    height: 300px;
+    width: 300px;
+}
+
+.stileInfoExtra{
+    padding-bottom: 5px;
+}
+
+.stileTestoExtra{
+    margin-left: 30px;
+    margin-right: 40px; /*è più grande di left perché questo oggetto in se ha già intrisecamente un margin-left di 10px da sommare ai 30*/
+    text-align: justify;
+}
+
+.stileImmagine{
+    max-height: 250px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 2px #dedede;
+}
+
+.centraElementi{
+    justify-content: space-around;
+}
+
+.risCreatoriQuiz {
+    font-family: starwars_v1, starwars_v2, sans-serif, Verdana; /*Abbiamo inserito i font anche nel file html perché alcuni browser non riescono a leggerlo dal css*/
+    color:#ecd031;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 0.6cm;
+    line-height: 0.5em;
+}
+
+.bottonePerIlQuiz{
+    font-size: 14px;
+}
+
+.stileCategoria{
+    color: #f08a06;
+}

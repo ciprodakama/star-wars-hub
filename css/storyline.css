@@ -1,0 +1,103 @@
+/* Per garantire Font StarWars, backgroudn stellato e dimensioni */
+.accordion__button__trilogy{
+    font-family: starwars_v1;
+    font-size: xx-large;
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 175px;
+    background-image: url("../immagini/storyline/star_background.jpg");
+    color: #EEDB00 ;
+}
+
+/* Per aggiungere freccia giù a destra e gestire poi tra attivo e non in JS  */
+.accordion__button__trilogy::after {
+    content: '\25be'; /* ASCI freccia giù */
+    float: right;
+}
+
+/* Stato active uguale al normale usato però per concatenarlo al CSS dei vari container_film */
+.accordion__button__trilogy--active{ background-image: url("../immagini/storyline/star_background.jpg") }
+
+/* Stato active per cambiare freccia, gestito in JS */
+.accordion__button__trilogy--active::after { content: '\25b4' }
+
+/* Stato active dei vari container mettendo display a block */
+.accordion__button__trilogy--active + .container__film__t1 { display: block}
+.accordion__button__trilogy--active + .container__film__t2 { display: block}
+.accordion__button__trilogy--active + .container__film__t3 { display: block}
+
+/* Stato disattivato comune a tutti i container_film */
+.container__film__t1, .container__film__t2, .container__film__t3{
+    
+    font-family: sans-serif;
+    background:black;
+    
+    display: none;
+    overflow: auto;
+}
+
+/* Container delle copertine, uso flex per garantire responsive design, */
+/* Nonchè una disposizione in riga e spaziare le 3 copertina su tutto lo spazio */
+.t__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* Usato per associare stato hover tramite JS */
+/* Default una volta caricata la pagina */
+.elementHovered:hover { 
+    -webkit-filter: brightness(1.2);
+    filter: brightness(1.2); 
+}
+
+/* Usato per associare stato clicked tramite JS */
+/* Aggiunto se una certa copertina viene selezionata */
+.elementClicked {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);     
+}
+
+/* Per garantire dimensioni ottimali in larghezza */
+.ImmCop {
+    width: 100%;
+}
+
+
+/* CLASSE DI OGNI FILM */
+/* Default nascosti */
+.trama{
+    display: none;
+}
+
+.trailer{
+    display: none;
+}
+
+/* SEZIONE DINAMICA DESCRIZIONE FILM */
+/* Default nascosti, usato solito font e vari padding  */
+.container__titolo{
+    display: none;
+    color: #ecd031;
+    font-family: starwars_v1, Verdana, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.container__trama__t1 , .container__trama__t2, .container__trama__t3{
+    display: none;
+    background: black;
+    color: #ecd031;
+    font-family: starwars_v1, Verdana, sans-serif;
+    font-size: 13px;
+    width: 100%;
+    padding: 20px;
+}
+
+.container__trailer{
+    display:none;
+    text-align: center;
+    padding-bottom: 20px;
+}

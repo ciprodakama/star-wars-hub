@@ -1,0 +1,101 @@
+.containerFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.containerForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sinistraLogin{
+    width: 320px;
+    height: 650px;
+    background: rgb(52, 58, 64);
+    color: #fff;
+    padding: 30px 30px;
+    border-radius: 5%;
+    margin-bottom: 15px;
+}
+
+.destraRegistrazione{
+    width: 500px;
+    height: 650px;
+    background: rgb(52, 58, 64);
+    color: #fff;
+    padding: 30px 30px;
+    border-radius: 5%;
+    margin-bottom: 15px;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    align-content: center;
+}
+
+.stileH1 h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.stileP p{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.stileP p{
+    margin: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+}
+
+.sinistraLogin input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.destraRegistrazione input{
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.stileInput input[type="email"], input[type="password"], input[type="text"]{
+    border: none;
+    outline: none;
+    height: 35px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+.stilebottoni input[type="submit"]{
+    background-color: rgb(251, 37, 37);
+    border-color: black;
+}
+
+.stileErrore h5{
+    font-size: 22px;
+    text-align: center;
+    color: red;
+}
+
+.stileMessaggio h5{
+    font-size: 22px;
+    text-align: center;
+    color: rgb(73, 156, 18);
+}
+
+.aspettoInfo{
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: justify;
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+    <head>
+        <title>STAR WARS HUB</title>
+        <meta name="viewport" content="width=device−width, initial−scale=1"/></meta>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>      
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <script src="js/vue.min.js" type="text/javascript" lang="javascript"></script>
+        <script src="js/aboutUs.js" type="text/javascript" lang="javascript"></script>
+        <link rel="icon" href="immagini/favicon3.png">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/universalStandardSite.css">
+        <link rel="stylesheet" type="text/css" href="css/aboutUs.css">
+    </head>
+   <body>
+        <!--Caricamento della navbar universale tramite VueJS-->
+        <div id="navuniv">
+            <introsito></introsito>
+        </div>
+        <br>
+        <!--Info generali. Link che aprono nuovo pannello/tab e che permettono di tornare indietro al nostro sito con il bottone apposito-->
+        <h3 align="center" style="font-weight: bold;">Chi Siamo?</h3>
+        <p class="marginiTesto">Questo sito è stato progettato, programmato e promosso da tre studenti di ingegneria informatica con la comune passione per 
+            la programmazione e, più in generale, per le scienze informatiche. Il progetto nasce come applicazione pratica del corso di
+            <a href="http://www.dis.uniroma1.it/rosati/lw/" target="_blank" rel="noopener noreferrer">"Linguaggi e Tecnologie per il Web"</a>,
+            presieduto dal docente <a href="http://www.dis.uniroma1.it/rosati/" target="_blank" rel="noopener noreferrer">Riccardo Rosati</a> con la
+            partecipazione del tutor Gianluca Cima, e promosso da <a href="https://www.uniroma1.it/it/" target="_blank" rel="noopener noreferrer">UNIROMA1, Sapienza.</a>  
+        </p>
+        <p class="marginiTesto">
+            Vuoi contattare la Sapienza? Oltre al precedente link del sito ufficiale, ecco i suoi canali social:<br>
+            Facebook:   <a href="https://www.facebook.com/SapienzaRoma/" target="_blank" rel="noopener noreferrer">Sapienza Università di Roma</a><br>
+            Instagram:  <a href="https://www.instagram.com/sapienzaroma/" target="_blank" rel="noopener noreferrer">@sapienzaroma</a>
+        </p>
+
+        <!--Card personale di ogni studente programmatore-->
+        <div class="containerFlex">
+            <div class="card flex-md-row mb-4 shadow-sm h-md-250 stileVignette">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h4 style="color: black;">Luca Polenta</h4>
+                    <div class="mb-1 text-muted">21 anni</div>
+                    <div class="mb-1 text-muted">Innamorato del mare</div>
+                    <p><a href="https://www.facebook.com/Luca.Polenta.98" target="_blank" rel="noopener noreferrer">Link al profilo Facebook</a><br>
+                    <a href="https://www.instagram.com/luca_polenta/" target="_blank" rel="noopener noreferrer">Instagram @luca_polenta</a></p>
+                    <button id="bottoneLuca" class="btn btn-primary btn-lg bg-dark" style="border-color: black; margin-left: 10px;">Scopri di più</button>
+                </div>
+                <img class="immagineProfilo" src="immagini/aboutUs/luca.jpg">
+            </div>
+            <div class="card flex-md-row mb-4 shadow-sm h-md-250 stileVignette">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h4 style="color: black;">Gianfranco Romani</h4>
+                    <div class="mb-1 text-muted">23 anni</div>
+                    <div class="mb-1 text-muted">Amante del nuoto</div>
+                    <p><a href="https://www.facebook.com/gianfranco.g.romani" target="_blank" rel="noopener noreferrer">Link al profilo Facebook</a><br>
+                    <a href="https://www.instagram.com/gianfree.romani/" target="_blank" rel="noopener noreferrer">Instagram @gianfree.romani</a></p>
+                    <button id="bottoneGianfranco" class="btn btn-primary btn-lg bg-dark" style="border-color: black; margin-left: 10px;">Scopri di più</button>
+                </div>
+                <img class="immagineProfilo" src="immagini/aboutUs/gianfranco.jpg">
+            </div>
+            <div class="card flex-md-row mb-4 shadow-sm h-md-250 stileVignette">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h4 style="color: black;">George Ciprian Telinoiu</h4>
+                    <div class="mb-1 text-muted">21 anni</div>
+                    <div class="mb-1 text-muted">Appassionato di fotografia</div>
+                    <p><a href="https://www.facebook.com/telinoiu.georgeciprian" target="_blank" rel="noopener noreferrer">Link al profilo Facebook</a><br>
+                    <a href="https://www.instagram.com/mr.g_cip/" target="_blank" rel="noopener noreferrer">Instagram @mr.g_cip</a></p>
+                    <button id="bottoneGeorge" class="btn btn-primary btn-lg bg-dark" style="border-color: black; margin-left: 10px;">Scopri di più</button>
+                </div>
+                <img class="immagineProfilo" src="immagini/aboutUs/george.jpg">
+            </div>
+        </div>
+
+        <!--div dinamico che mostra info extra su ogni utente. Di default è nascosto e si mostra/nasconde con i bottoni sopra-->
+        <div class="containerFlex">
+            <div id="sezioneScopri" class="sfondoScopri">
+                <div class="containterArgomenti">
+                    <strong class="stileInfoExtra stileCategoria">Qual è il mio motto?</strong>
+                </div>
+                <div class="containterArgomenti">
+                    <p id="info1" class="stileTestoExtra"></p>
+                </div>
+                <br>
+                <div class="containterArgomenti">
+                    <strong class="stileInfoExtra stileCategoria">Personaggio preferito?</strong>
+                </div>
+                <div class="containterArgomenti">
+                    <p id="info2" class="stileTestoExtra"></p>
+                </div>
+                <br>
+                <div class="containterArgomenti">
+                    <strong class="stileInfoExtra stileCategoria">Quale risultato ho avuto al nostro quiz?</strong>
+                </div>
+                <div class="containterArgomenti centraElementi">
+                    <img id="info3" class="stileImmagine">
+                </div>
+                <div class="containterArgomenti centraElementi">
+                    <p id="info4" class="risCreatoriQuiz"></p>
+                </div>
+                <div class="containterArgomenti centraElementi">
+                    <button id="bottoneQuiz" class="btn btn-primary btn-lg bottonePerIlQuiz" style=" background-color:#fc9713; border-color:black">Vuoi fare anche tu il quiz? Cliccami!</button>
+                </div>
+            </div>
+        </div>
+        <!--Caricamento del footer universale tramite VueJS-->
+        <div id="footeruniv">
+            <endsito></endsito>
+        </div>
+        <script type="text/javascript" src="js/footerUniversale.js"></script>
+        <script type="text/javascript" src="js/navbarUniversale.js"></script>           
+    </body>
+</html>

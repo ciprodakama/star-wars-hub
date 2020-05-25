@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!-- Titolo Universale -->
+      <title>STAR WARS HUB</title>
+      <meta name="viewport" widht="device−width, initial−scale=1.0">
+      <meta charset="utf-8">
+      <link rel="icon" href="immagini/favicon3.png">
+      <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+      <link rel="stylesheet" type="text/css" href="css/universalStandardSite.css">
+      <link rel="stylesheet" type="text/css" href="css/shop.css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>      
+      <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+      <script type="text/javascript" src="js/vue.min.js"></script>
+    </head>
+
+    <body>
+      <!-- NavBar Universale -->
+      <div id="navuniv">
+          <introsito></introsito>
+      </div>
+    
+      <!-- Div principale popolato tramite VueJS -->
+      <!-- Elemento app definito in shop.js -->
+      <div id="app">
+        <!-- Container Bottone Carrello e Torna lista prodotti -->
+        <div class="container">
+          <!-- Default disattivato, gestito tramite variabile isShowingCart -->
+          <br>
+          <p  @click.prevent="isShowingCart = false">
+            <strong>Ritorna alla lista dei prodotti</strong>
+          </p>
+
+          <div class="text-right pull-right">
+            <span class="stats">
+              <!-- Prendo valore lenght dall'elemento cart.items per vedere numero di articoli -->
+              <!-- Ogni articolo se presente in quantità > 1; verrà comunque considerato come singolo elemento -->
+              <!-- Se volessi mostrare il numero totale, potrei sommare i valori di cart.items.quantity per ogni elemento -->
+              {{ cart.items.length }} 
+              <template v-if="cart.items.length == 1"> <!-- tramite v-if | else gestisco la scritta articolo o articoli -->
+                articolo
+              </template>
+              <template v-else>
+                articoli
+              </template> 
+              nel carrello, 
+              gran totale --> {{ cartTotal | currency }} 
+              <!-- cartTotal viene calcolato in modo dinamico in base agli elementi presenti in cart -->   
+              <button class="btn btn-primary" @click="isShowingCart = true"> <!-- Cambia stato di isShowingCart a true -->
+                Vai al Carrello
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <br>
+        
+        <!-- Container che mostra Lista prodotti o Carrello a seconda del valore di isShowingCart; -->
+        <!-- Sfruttando nuovamente v-if | else -->
+        <!-- Se isShowingCart è false; allora entro in v-if -->
+        <div class="container">
+          <div v-if="!isShowingCart" id="products" class="row">
+            <!-- Scorro l'array Products definito in shop.js con v-for-->
+            <!-- La classe del div sfutta flex-box andando a definire le specifiche colonne utilizzate dal div a seconda della dimensione dello schermo -->
+            <!-- groupWrapper definito sempre in shop.js sfrutta la classe "list-group-item" di Bootstrap -->
+            <div v-for="product in products" :class="groupWrapper" class="item col-xs-4 col-md-6 col-lg-4">
+
+              <!-- Ogni prodotto ora avrà le stesse proprietà di stile, con la sola modifica delle loro descrizioni locali definite nell'elemento VUE -->
+              <!-- In particolare Thumbnail è in container generale che raggruppa immagine, titolo, desrizione, prezzo, disp e bottone di aggiunta al carrello -->
+              <div class="thumbnail">
+                <!-- Carico l'immagine del product popolando il campo source con product.picture -->
+                <img class="group list-group-image" :src="product.picture" widht="100" height="100" style="padding-left:5px;" alt: ="" />
+
+                <!-- Ogni Thumbnail è diviso in 2 zone, una col il nome e la descrizione del prodotto e l'altra con prezzo, disponibilità e bottone di aggiunta al carrello -->
+                <div class="col">
+                  <!-- Uso le classi standard heading e text della classe Bootstrap list-group-item -->
+                  <h4 class="group inner list-group-item-heading">
+                    {{product.name}}
+                  </h4>
+                  <p class="group inner list-group-item-text">
+                    {{product.description}}
+                  </p>
+                </div>
+
+                <div class="col">
+                  <!-- Ulteriori indicazioni nella classe per gestire le varie dimensioni tramite flexbox -->
+                  <div class="row-xs-12 row-md-6">
+                    <p class="price">
+                      {{product.price | currency}}
+                    </p>
+                  </div>
+                  <div class="row-cols-xs-12 row-cols-md-10">
+                    <!-- oltre alla classe standard vi è anche una seconda che viene gestita in modo dinamico in base al valore di product.inStock -->
+                    <div class="number-in-stock" :class="{ few: product.inStock < 10 && product.inStock > 0, none: product.inStock == 0 }" >
+                      {{ product.inStock }} disponibili
+                    </div>
+                    <!-- Se premuto e non disabilitato, aggiunge il prodotto al carrello -->
+                    <!-- Policy dell'aggiuntea vengono gestite all'interno della funziona addProductToCart() -->
+                    <button class="btn btn-primary" @click="addProductToCart(product)" :disabled="product.inStock == 0">
+                      Aggiungi al Carrello
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <!-- Se isShowingCart è false; allora entro in v-else -->
+        <div v-else>
+          <h1>Carrello</h1>
+          <!-- Controllo se ci sono elementi nel carrello tramite v-if interrogando il valore cart.items.lenght -->
+          <table v-if="cart.items.length > 0" class="table table-striped">
+            <thead>
+              <!-- Header della tabella -->
+              <tr>
+                <th>Prodotto</th>
+                <th>Quantità</th>
+                <th>Prezzo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Scorro l'elemento cart.items tramite v-for -->
+              <tr v-for="item in cart.items">
+                <!-- Inserisco il nome -->
+                <td>{{ item.product.name }}</td>
+                <td>
+                   <!-- Inserisco la quantità e concateno anche i bottoni di aggiunta e rimozione -->
+                  {{ item.quantity }} &nbsp;
+                   <!-- Questi bottoni sono ben diversi rispetto a quello della lista dei prodotti poichè chiamano una funzione differente -->
+                   <!-- Le specifiche sono commentate all'interno di shop.js -->
+                   <!-- Quando aggiungo un elemento controllo sempre che il suo stato .inStock sia != 0; altrimenti disabilito il bottone -->
+                  <button class="btn btn-success" @click="increaseQuantity(item)" :disabled="item.product.inStock == 0">+</button>
+                  <button class="btn btn-danger" @click="decreaseQuantity(item)">-</button>
+                </td>
+                <!-- Il prezzo viene calcolato moltiplicando il prezzo del singolo prodotto per la quantità -->
+                <!-- Entrambi i dati vengono presi dal corrispettivo elemento cart.item  -->
+                <td>{{ item.quantity * item.product.price | currency }}</td>
+              </tr>
+              
+              <tr>
+                <td class="text-right" colspan="2">
+                  <strong>Parziale</strong>
+                </td>
+                <!-- Invoca la funziona cartTotal e currency da shop.js -->
+                <td>{{ cartTotal | currency }}</td>
+              </tr>
+              
+              <tr>
+                <td class="text-right" colspan="2">
+                  <strong>Tasse</strong>
+                </td>
+                <!-- Invoca taxAmount e currency da shop.js  -->
+                <td>{{ taxAmount | currency }}</td>
+              </tr>
+              
+              <tr>
+                <td class="text-right" colspan="2">
+                  <strong>Gran Totale</strong>
+                </td>
+                <!-- Il totale sarà quindi la somma dei precedenti 2 valori  -->
+                <td id="cartTotal">{{ cartTotal + taxAmount | currency }}</td>
+              </tr>
+              
+              <tr>
+                <td colspan="2"></td>
+                <!-- Bottone che al click chiama la funziona Checkout  -->
+                <td><button class="btn btn-success" @click="checkout">Checkout</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Se cart.items.lenght == 0, entro in v-else -->
+          <p v-else>
+            Il tuo carrello è vuoto!
+          </p> 
+          <p>
+            Usa la forza per riempirlo 
+            <img height="100" widht="100" src="immagini/shop/Small_Yoda.png" alt="Small_Yoda">
+          </p>
+          
+        </div>
+      </div>
+      </div>
+      
+      <br>
+
+      <!-- Footer -->
+      <div id="footeruniv">
+        <endsito></endsito>
+      </div>
+
+      <!-- JS -->
+      <script type="text/javascript" src="js/footerUniversale.js"></script>
+      <script src="js/shop.js" type="text/javascript" lang="javascript"></script>
+      <script type="text/javascript" src="js/navbarUniversale.js"></script>
+    </body>
+</html>

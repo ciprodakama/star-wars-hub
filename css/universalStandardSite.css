@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'starwars_v1';
+    src: local('starwars_v1'),
+                url('../font/STARWARS/STARWARS.TTF') format('truetype'),
+                url('../font/STARWARS/STARWARS.woff') format('woff'),
+                url('../font/STARWARS/STARWARS.eot');
+}
+
+@font-face {
+    font-family: 'starwars_v2';
+    src: local('starwars_v2'), url('../font/STARWARS/StarJedi-DGRW.ttf') format('truetype'),
+            local('starwars_v2'), url('../font/STARWARS/StarJedi-DGRW.eot');
+}
+
+html{
+    position:relative;
+    min-height:100%;
+}
+
+body{
+    margin:0;
+    margin-bottom:75px;
+    background-color: rgba(216, 215, 215, 0.774);
+}
+
+.titolopagina {
+    font-family: starwars_v1, starwars_v2, sans-serif, Verdana; /*Abbiamo inserito i font anche nel file html perché alcuni browser non riescono a leggerlo dal css*/
+    color:#ecd031;
+    text-align: center;
+    font-size: 80px;
+    padding-top: 0.8cm;
+    line-height: 0.5em;
+}
+
+.sottotitolopagina{
+    font-family: starwars_v1, starwars_v2, sans-serif, Verdana; /*Abbiamo inserito i font anche nel file html perché alcuni browser non riescono a leggerlo dal css*/
+    padding-top: 0.1cm;
+    color: #e4ac14;
+    text-align: center;
+}
+
+.navbar {
+    padding: .4rem;
+}
+
+.navbar-nav li {
+    padding-right: 15px;
+}
+
+.nav-link {
+    font-size: 1.1em;   /*per rendere i bottoni lievemente più grandi e proporzionati*/
+}
+
+.navbarlogo {
+    font-family: starwars_v1, Verdana, sans-serif;
+    color:#ecd031;
+    font-size: 258x;
+    padding-top: 0.2cm;
+    padding-left: 0.2cm;
+}
+
+.footerPersonalizzato{
+    background-color: #343a40;
+    color: #ecd310;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #343a40;
+    color: #ecd310;
+  }

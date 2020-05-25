@@ -1,0 +1,22 @@
+Nome del server:	Progetto
+User db:		postgres (default)
+Password db:		password (default)
+
+
+
+CREATE TABLE utente(
+  email					VARCHAR(40)	PRIMARY KEY,
+  nome					VARCHAR(40) NOT NULL,
+  cognome				VARCHAR(40) NOT NULL,
+  password				VARCHAR(40) NOT NULL,
+  risultatoQuiz			VARCHAR(20)	DEFAULT NULL
+);
+
+CREATE TABLE ordini(
+  data			 TEXT	NOT NULL,
+  email			 VARCHAR(40)	NOT NULL,
+  totale		 VARCHAR(20)	NOT NULL,
+  oggetti    TEXT NOT NULL,
+  PRIMARY KEY (data),
+  FOREIGN KEY (email) REFERENCES utente(email)
+);

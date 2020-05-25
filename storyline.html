@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Titolo Universale -->
+        <title>STAR WARS HUB</title>
+        <meta name="viewport" widht="device−width, initial−scale=1.0">
+        <meta charset="utf-8">
+        <link rel="icon" href="immagini/favicon3.png">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/universalStandardSite.css">
+        <link rel="stylesheet" type="text/css" href="css/storyline.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>      
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <script type="text/javascript" src="js/vue.min.js"></script>
+    </head>
+    <body>
+        <!-- NavBar Universale -->
+        <div id="navuniv">
+            <introsito></introsito>
+        </div>
+        <!-- Main Container Effetto Accordion | Tutti i commenti valgono anche per i Main Container successivi -->
+        <div class="accordion__t1">
+            <!-- Buttone di apertura e chiusura del Main Container -->
+            <button type="button" class="accordion__button__trilogy">ORIGINAL TRILOGY</button> <!-- Classe comune sfruttata per gestire click in JS -->
+            
+            <div class="container__film__t1">
+                <!-- t_container per gestire responsive design tramite flex nel file CSS -->
+                <div class="t__container">
+                    <!-- Ogni div contiene l'id del singolo film con classe comune CopFilm usata per associare il click tramite Jquery -->
+                    <div id="t1-f1" class="CopFilm">
+                        <!-- Uso tag img per conferire all'immagine scalabilità dinamica in base alla dimensione del browser -->
+                        <!-- Provando ad usare il background tramite CSS questa proprietà veniva persa -->
+                        <img class="ImmCop" id="EP IV - Una Nuova Speranza" src="immagini/storyline/t1-f1.jpg" alt="EP IV">
+                            <!-- Il link al trailer si trova dentro un tag <p> in modo da potervi accedere tramite html() usando Jquery -->
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/_N2yztzoYXo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                            <!-- La trama di ogni film si trova all'interno di un div con classe "trama" -->
+                            <div class="trama">Il primo episodio della trilogia originale è ambientato 19 anni dopo la Fondazione dell’Impero Galattico. L’imperatore Palpatine è sempre più forte e Lord Darth Vader ha sterminato gli ultimi Jedi rimasti. Nel frattempo, però, si è formata l’Alleanza Ribelle, che è riuscita a entrare in possesso delle planimetrie della Morte Nera, una stazione spaziale in grado di distruggere interi pianeti con un raggio mortale. La principessa Leila (Leia nella versione originale), membro dell’Alleanza Ribelle, viene catturata dagli agenti dell’Impero, ma riesce a trasferire le planimetrie nella memoria del droide R2-D2 (C1-P8 nella versione originale). Il droide, insieme al droide C-3PO (D-3BO) sono inviati sul pianeta Tatooine per trovare Obi-Wan Kenobi, ma i due sono catturati e venduti al contadino Owen Lars, che vive con la moglie e con il nipote Luke Skywalker. Luke aiuta i due droidi a trovare Obi-Wan, ormai anziano, il quale racconta al ragazzo che suo padre è caduto per il tradimento di Darth Vader e lo introduce alla filosofia Jedi. I due, poi, decidono di reclutare il contrabbandiere Ian Solo, pilota dell’astronave Millennium Falcon, e il suo co-pilota Chewbecca, per liberare la Pricipessa Leila e consegnare le mappe all’Alleanza. Il piano riesce e il gruppo si mette in slavo sulla luna del pianeta Yavin, da cui i ribelli pianificano l’attacco alla Morte Nera, che viene distrutta anche grazie all’aiuto di Luke.</div>   
+                    </div>
+                    <div id="t1-f2" class="CopFilm">
+                        <img class="ImmCop" id="EP V - L'impero Colpisce Ancora" src="immagini/storyline/t1-f2.jpg" alt="EP V">
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/9Oeb1Y7sUcg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </p>
+                            <div class="trama">Tre anni dopo la distruzione della Morte Nera, le forze ribelli devono evacuare la loro base sul pianeta Hoth per sfuggire alla persecuzione delle armate imperiali, guidate da Darth Vader. Luke, nel frattempo, arriva a Dagobah per diventare uno Jedi sotto la guida dell’ultimo maestro ancora in vita, Yoda, mentre Leila e Ian Solo si recano sul pianeta Bespin, guidato da un amico di Ian, Lando Calrissian, dove però sono imprigionati da Darth Vader. Avvertendo che i due amici sono in pericolo, Luke Skywalker va in loro aiuto e si scontra in duello con Darth Vader: durante lo scontro, Luke perde una mano e Vader gli rivela di essere suo padre, ex Jedi chiamato un tempo Anakin Skywalker. Luke si getta da uno dei ponti del pianeta-colonia, ma Leila, salvata da Lando, percepisce la sua richiesta di aiuto e lo salva a bordo del Millenium Falcon. Mentre i robot medici ricostruiscono la mano a Luke, Lando e Chewbecca si recano verso il luogo in cui Ian Solo è ancora tenuto prigioniero.</div>
+                    </div>
+                    <div id="t1-f3" class="CopFilm">
+                        <img class="ImmCop" id="EP VI - Il Ritorno Dello Jedi" src="immagini/storyline/t1-f3.jpg" alt="EP VI">
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/cv-5OXWvXFg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </p>      
+                            <div class="trama">Leila, ormai innamorata di Ian Solo, chiede a Luke di aiutarla a salvare l’amato, tenuto prigioniero da Jabba the Hutt. Il piano funziona, e Luke torna su Dagobah per completare il suo addestramento, ma scopre che Yoda è in punto di morte. Il maestro Jedi gli rivela che Darth Vader è davvero suo padre e che dovrà affrontarlo nuovamente per diventare un Jedi. Inoltre, dallo spirito di Obi-Wan, Luke scopre che la Principessa Leila è sua sorella gemella. Nel frattempo, però, Ian e Leila scoprono che è stata creata una nuova Morte Nera e guidano un gruppo di ribelli sulla Luna boscosa di Endor per disattivare il campo di energia che alimenta lo scudo spaziale di protezione della stazione orbitante. Luke, invece, si reca direttamente sulla Morte Nera, dove affronta il padre e l’Imperatore: il ragazzo viene sconfitto da Palpatine, ma Darth Vader, per proteggere il figlio, si scaglia contro l’Imperatore, uccidendolo e morendo poco dopo tra le braccia di Luke a causa delle ferite riportate. La Morte Nera viene infine distrutta e Luke si riunisce a Ian e Leila. Mentre i ribelli festeggiano la fine dell’Impero, Luke sorride agli spiriti di Obi-Wan e Yoda, a cui si è unito quello di suo padre, il Jedi Anakin Skywalker.</div>
+                    </div>
+                </div>
+                <!-- Main Container zona dinamica con specifica del singolo film -->
+                <div class="container">
+                    <div class="container__titolo"></div>
+                    <!-- Container trama non ha classe generale poichè viene usato come riferimento per accedere a titolo e trailer tramite Jquery -->
+                    <div class="container__trama__t1"></div>
+                    <div class="container__trailer"></div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Per commenti, rifarsi ad accordion_t1 -->
+        <div class="accordion__t2">
+            <button type="button" class="accordion__button__trilogy">PREQUEL TRILOGY</button>
+            <div class="container__film__t2">
+                <div class="t__container">
+                    <div id="t2-f1" class="CopFilm">
+                        <img class="ImmCop" id="EP I - La Minaccia Fantasma" src="immagini/storyline/t2-f1.jpg" alt="EP I">
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/Q47hG_W-eI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </p>
+                            <div class="trama">A causa di un danno all’iperpropulsore, però, il gruppo è costretto ad atterrare sul pianeta Tatooine, dove incontra Anakin Skywalker, un bambino di nove anni che lavora come schiavo. Il Jedi vede nel ragazzo la figura del Prescelto, ossia colui che porterà nuovamente equilibrio nella Forza. Anakin riesce a riscattare la sua libertà vincendo una gara di gusci e lascia il pianeta con Qui-Gon, Obi Wan, Jar Jar Binks e la Regina. Dopo essere arrivati nel pianeta capitale della Repubblica, Coruscant, Amidala non riceve l’aiuto sperato dal Senato Galattico contro la rivolta che sta avvenendo a Naboo, così come i senatori nutrono dubbi sull’addestramento del piccolo Anakin, troppo insicuro e quindi suscettibile all’influenza negativa della Forza. La Regina decide allora di tornare a Naboo insieme al jedi dove riesce a convincere il popolo Gungan ad allearsi con le forze di Naboo contro la Federazione dei Mercanti. Qui-Gon viene ucciso da Darth Maul in un combattimento con le spade laser, ma Obi-Wan, poco dopo riesce a uccidere l’apprendista Sith. Obi-Wan promette a Qui-Jon in punto di morte di addestrare Anakin per diventare un Jedi. Palpatine viene eletto Cancelliere Supremo, al fianco di Amidala, mentre il Concilio dei Jedi accetta riluttante Anakin Skywalker come apprendista.</div>
+                        </div>
+                    <div id="t2-f2" class="CopFilm">
+                        <img class="ImmCop" id="EP II - L'Attacco Dei Cloni" src="immagini/storyline/t2-f2.jpg" alt="EP II">
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/ryO2qLIQGKM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </p>    
+                            <div class="trama">Dieci anni dopo le vicende del primo film, la Repubblica Galattica si trova nuovamente in difficoltà: Darth Sidious e il Jedi rinnegato Dooku creano la Confederazione dei Sistemi Indipendenti, un’alleanza di pianeti che vuole dichiarare l’indipendenza dalla Repubblica. Nel frattempo, Anakin viene nominato guardia di Padmé, diventata senatrice e nel mirino di numerosi attentati, mentre Obi-Wan cerca di catturare chi minaccia la vita di Padmé. Anakin e la ragazza si innamorano, nonostante il codice Jedi impedisca al giovane di avere relazioni sentimentali. Obi-Wan riesce a trovare il sicario su Kamino, pianeta dove è segretamente in corso la creazione di un grande esercito di cloni. Obi-Wan viene catturato dalla Confederazione, ma in suo aiuto arrivano i Jedi, appoggiati da Palpatine, il quale decreta l’esercito dei cloni come armata della Repubblica. Da questo momento, inizia la Guerra dei Cloni tra forze repubblicane e confederate. Intanto, Anakin e Padmé si sposano in segreto a Naboo.</div>
+                    </div>
+                    <div id="t2-f3" class="CopFilm">
+                        <img class="ImmCop" id="EP III - La Vendetta dei Sith" src="immagini/storyline/t2-f3.jpg" alt="EP III">
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/cfGkx6QK5x8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </p>
+                            <div class="trama">La Guerra dei Cloni è iniziata da tre anni: Anakin e Obi-Wan si recano in aiuto a Palpatine, catturato da Dooky e dal comandante dei droidi, il Generale Grievous. Anakin, nel frattempo, ha sogni premonitori in cui vede Padmé morire. Palpatine, in realtà, è il Signore Oscuro dei Sith, e cerca di portare il giovane Jedi dalla sua parte, convincendolo che il Lato Oscuro racchiude il potere per salvare la vita dell’amata. Anakin, così, decide di diventare suo allievo. Palpatine riesce a sciogliere il Senato e ad autoproclamarsi Imperatore dell’Impero Galattico, ponendo fino alla Repubblica, mentre Anakin e l’esercito dei cloni sterminano i Jedi. Obi-Wan, però, affronta il suo ex allievo sul pianeta Mustafar, mutilandolo delle gambe e di un braccio. Il ragazzo viene salvato prima di morire da Sidious, che lo fa operare e lo dota di uno scafandro salvavita, trasformandolo così in Darth Vader (o Lord Fener in italiano). Nel frattempo, Padmé muore mentre dà alla luce due gemelli, Luke e Leila, che vengono separati e nascosti su due pianeti diversi – Tatooine e Alderann, dove i Sith non potranno percepire la loro presenza.</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="container__titolo"></div>
+                    <div class="container__trama__t2"></div>
+                    <div class="container__trailer"></div>
+                </div>
+                
+            </div>  
+        </div>
+        <!-- Per commenti, rifarsi ad accordion_t1 -->
+        <div class="accordion__t3">
+            <button type="button" class="accordion__button__trilogy">SEQUEL TRILOGY</button>
+            <div class="container__film__t3">
+                <div class="t__container">
+                    <div id="t3-f1" class="CopFilm">
+                        <img class="ImmCop" id="EP VII - Il Risveglio Della Forza" src="immagini/storyline/t3-f1.jpg" alt="EP VII">
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/vOCOh2sHZSI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </p>
+                            <div class="trama">La storia si svolge circa 30 anni dopo i fatti raccontati in Episodio VI – Il Ritorno dello Jedi. Dopo la distruzione della seconda Morte Nera e la caduta dell’Impero, dalle ceneri di quest’ultimo è nato il sinistro Primo Ordine, con a capo il Leader Supremo Snoke e il suo braccio destro Kylo Ren. Oltre alla Resistenza, sostenuta dalla Repubblica e guidata dal generale Leia Organa, il pericolo numero uno del Primo Ordine è l’ultimo dei cavalieri jedi, Luke Skywalker, misteriosamente sparito da tempo. A cercare Luke è anche sua sorella Leia che vede in lui l’unica possibilità di ristabilire pace e giustizia nella galassia. Per trovarlo, Leia ha inviato sul pianeta Jakku uno dei suoi più bravi e coraggiosi piloti, Poe Dameron. La missione segreta di Poe è quella di recuperare un indizio sul luogo in cui si trova Luke…</div>
+                    </div>
+                    <div id="t3-f2" class="CopFilm">
+                        <img class="ImmCop" id="EP VIII - Gli Ultimi Jedi" src="immagini/storyline/t3-f2.jpg" alt="EP VIII">
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/WgcUW-P_SeA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </p>
+                            <div class="trama">Rey è riuscita finalmente a trovare Luke, ma Skywalker non sembra poi così felice di avere una nuova apprendista, al contrario ha l'aria di essere determinato a mandarla via, sebbene la ragazza sia determinata a restare. Nel frattempo la Ribellione vive il suo momento più disperato: colpiti duramente durante una fuga, Leia e i suoi si sono andati a cacciare in una trappola ancora più grande e più temibile. Poe, Finn e Rose, una coraggiosa combattente con una sorella da vendicare, cercano di trovare una via d'uscita a quella che sembra una situazione impossibile. Per riuscire a liberarsi della flotta nemica infatti dovrebbero intrufolarsi a bordo della nave ammiraglia e disattivare un congegno che consente a Hux e ai suoi di tracciarli anche nell'iperspazio. Rose e Finn partono quindi alla ricerca di un misterioso hacker che dovrebbe aiutarli a trovare i codici per salire a bordo della nave imperiale. Intanto Rey scopre di avere una connessione mentale con Kylo Ren e si convince che Ben Solo si possa ancora salvare. Luke accetta di darle aiuto per sviluppare la Forza, seppure di controvoglia. Kylo Ren però incita la ragazza a liberarsi di Luke e a spingerlo a raccontargli cosa è davvero accaduto fra zio e nipote. Le versioni di Kylo e di Luke sono diverse, ma entrambi altrettanto inquietanti. Incapace di convincere Luke a seguira, Rey parte per andare ad aiutare i suoi amici, con l'idea però di recarsi prima da Kylo Ren per farlo tornare al lato della luce. Riuscirà Rey a convertire Kylo? E Luke resterà davvero a guardare mentre la Ribellione e sua sorella Leia rischiano di soccombere?</div>
+                    </div>
+                    <div id="t3-f3" class="CopFilm">
+                        <img class="ImmCop" id="EP IX - L'Ascesa di Skywalker" src="immagini/storyline/t3-f3.jpg" alt="EP IX">
+                            <p class="trailer"> <iframe width="560" height="315" src="https://www.youtube.com/embed/hH5NdGyMxxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </p>
+                            <div class="trama">Star Wars: L'ascesa di Skywalker, film diretto da J.J. Abrams, è il terzo capitolo della trilogia della saga di Guerre Stellari ed è l'episodio finale epico dell'epopea su Skywalker. Un anno dopo gli eventi del precedente film, Gli ultimi Jedi, la Resistenza sopravvissuta o quello che ne rimane affronta ancora una volta il Primo Ordine. Non dovrà fare i conti solo con l'oscuro regime, ma anche con il passato e fronteggiare i propri tumulti interni. Al tempo stesso l'antica battaglia tra Jedi e Sith sembra aver raggiunto l'apice, mettendo un punto definitivo alla saga di Skywalker. Il film permetterà di scoprire di più anche sul passato di Rey (Daisy Ridley), l'eroina della nuova trilogia che ha definitamente abbracciato il Lato Chiaro della Resistenza, e sull'identità dei suoi genitori, che, secondo i capitoli precedenti, l'hanno abbandonata durante la tenera età.</div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="container__titolo"></div>
+                    <div class="container__trama__t3"></div>
+                    <div class="container__trailer"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div id="footeruniv">
+            <endsito></endsito>
+        </div>
+        <!-- JS -->
+        <script type="text/javascript" src="js/footerUniversale.js"></script>
+        <script src="js/storyline.js" type="text/javascript" lang="javascript"></script>
+        <script type="text/javascript" src="js/navbarUniversale.js"></script>
+    </body>
+</html>

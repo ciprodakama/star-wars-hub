@@ -1,0 +1,157 @@
+/*Slideshow container*/
+.mySlideshow_container{
+    max-width: 900px;
+    min-height: 90%;
+    max-height: 550px;
+    position:relative;
+    margin-left:27%;
+    margin-right:27%;
+    background-color: white;
+    border: 2px solid #343a40;
+    border-radius:10px;
+}
+
+.mySlide{
+    display:none;
+}
+/*Immagini delle slide*/
+.mySlide img{
+    min-height:250px;
+    max-height: 300px;
+    max-width:30%;
+    top:2px;
+    bottom:20px;
+    left:2px;
+    object-fit: contain;
+}
+/*Bottoni per spostarmi di slide*/
+.prevButton, .nextButton{
+    cursor:pointer; /*Definisce come viene mostrato cursore quando passo sopra all'oggetto, in questo caso come puntatore*/
+    position:absolute;
+    top:50%;
+    width:auto;
+    margin-top: -22px;
+    padding:16px;
+    color:white;
+    font-weight:bold;
+    font-size:18px;
+    transition: 0.6s ease; 
+    border-radius:0 3px 3px 0;
+    user-select:none; /* definisce se un oggetto può essere selezionato*/
+}
+
+.nextButton{
+    right:0;
+    border-radius: 3px 0 0 3px;
+}
+
+/*hover: selezionare elementi quando il mouse ci passa sopra*/
+/*Cambio sfondo, leggermente trasparente*/
+.prevButton:hover, .nextButton:hover{
+    background-color: rgba(53, 52, 52, 0.747);
+}
+
+/*Testo all'interno delle slide*/
+.text{
+    color: black;
+    font-size:14px;
+    padding: 8px 12px;
+    position:absolute;
+    top:2px;
+    left:30%;
+    width:70%;
+    vertical-align: 50%;
+    text-align:left;
+}
+
+/*Numeri delle slide*/
+.numbertext{
+    color:#ecd310;
+    font-size: 12px;
+    padding:8px 12px;
+    position: absolute;
+    top:0;
+}
+
+/*Bottoni 'dot'*/
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #ecd310;
+    border-radius: 10%;
+    display: inline-block;
+    transition: background-color 0.5s ease;
+}
+
+.active, .dot:hover{  
+    background-color:#343a40;
+}
+
+/*Effetto di fading*/
+.fader{
+    -webkit-animation-name: fader;
+    -webkit-animation-duration: 2.0s;
+    animation-name: fader;
+    animation-duration: 2.0s;
+}
+
+@-webkit-keyframes fader{ /*Supporto per Chrome*/
+    from{opacity: .4}
+    to{opacity: 1}
+}
+
+@keyframes fader{
+    from{opacity: .4}
+    to{opacity: 1}
+}
+
+
+@media (max-width: 1800px){ /*Per adattarmi alle dimensioni dello schermo quando rimpicciolisco*/
+    .text{
+        font-size: 12px;
+        left:17%;
+    }
+    .numbertext{
+        font-size: 8px;
+    }
+    .dot{
+        width:12px;
+        height:12px;
+    }
+    .mySlideshow_container{ 
+        min-width:75%;
+        max-height:75%;
+        position:relative;
+        margin-left:13%;
+        margin-right: 27%;
+    }
+    .mySlide img{
+        max-width:15%;
+        max-height:350px;
+        top:2px;
+        bottom:20px;
+        left:2px;
+    }
+}
+
+@media (max-width: 1000px){ 
+    .text{
+        font-size: 10px;
+    }
+    .numbertext{
+        font-size: 5px;
+    }
+    .dot{
+        width:10px;
+        height:10px;
+    }
+    .mySlideshow_container{ 
+        min-width: 100%;
+        max-height:100%;
+        position:relative;
+        margin-left:0px;
+        margin-right: 0px;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>STAR WARS HUB</title>
+        <meta name="viewport" content="width=device−width, initial−scale=1.0"></meta>
+        <meta charset="utf-8"></meta>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <link rel="icon" href="immagini/favicon3.png">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/universalStandardSite.css">   
+        <link rel="stylesheet" type="text/css" href="css/home.css"/>
+        <script type="text/javascript" src="js/vue.min.js"></script>
+    </head>
+    <style>
+        footer{
+            background-color: #343a40;
+            color: #ecd310;
+            font-size: 14px;
+            left:50%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#"><h5 class="navbarlogo" style="font-family:starwars_v1;">STAR WARS HUB</h5></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <!-- Menù -->
+                <ul class="navbar-nav ml-auto" >
+                    <li id="navHome" class="nav-item active">
+                        <a class="nav-link" href="home.html">Homepage</a>
+                    </li>
+                    <li id="navStoryline" class="nav-item">
+                        <a class="nav-link" href="storyline.html">Storyline</a>
+                    </li>
+                    <li id="navPersonaggi" class="nav-item">
+                        <a class="nav-link" href="personaggi.html">Personaggi</a>
+                    </li>
+                    <li id="navQuiz" class="nav-item">
+                    <a class="nav-link" href="quiz.html">Quiz</a>
+                    </li>
+                    <li id="navShop" class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li id="navUtente" class="nav-item">
+                        <a class="nav-link" href="php/areaRiservata.php">Area Riservata</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Zona con effetto di fade -->
+        <div class="fader"></div>
+        <!-- Intro -->
+        <section class="intro">
+            A long time ago, in a website far,<br> far away...
+        </section> 
+        <!-- Scritta con effetto crawl -->
+        <section class="star-wars">
+            <div class="crawl">
+                <div class="title">
+                    <p>StarWarsHub</p>
+                    <h1>Somewhere in the internet far far away</h1>
+                </div>
+                <p> Gravi tumulti travolgono il sistema solare. In un mondo flagellato da un nuovo virus invisibile,
+                    tre studenti di ingegneria informatica ricevono un arduo incarico: sfruttando gli insegnamenti dei propri maestri Jedi,
+                    devono progettare e programmare un sito web. Tra funzionalità deprecate, dispositivi eterogenei e linguaggi di programmazione disobbedienti,
+                    riusciranno i nostri giovani padawan a prendere un ottimo voto?
+                </p>
+            </div>
+        </section>
+        <!-- Logo star wars hub-->
+        <section id="logo"> 
+            <img src="immagini/logo.png">
+            <audio id="my_audio" preload="auto">
+                <source src="sound/theme_song_v1.1.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+        <!-- Bottone per avviare l'animazione -->
+        <button class="btn btn-primary btn-lg btn-warning" id="avvia-animazione">Scopri di più, cliccami!</button>
+        <!-- Footer -->
+        <footer class="myFooter">
+            <br>
+            <ul style="left:500px; list-style-type: none;">
+                <li style="color:#ecd310; font-size: 16px;">StarWarsHub, &copy; Copyright 2020</li>
+                <li>
+                    <a href="aboutUs.html" style="color:#ecd310; text-decoration: underline">About us</a>
+                </li>
+            </ul>
+        </footer>
+        <script type="text/javascript" src="js/navabarUniversale.js"></script>
+        <script src="js/home.js" type="text/javascript" lang="javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>STAR WARS HUB</title>
+        <meta name="viewport" content="width=device−width, initial−scale=1"></meta>
+        <meta charset="utf-8"></meta>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <link rel="icon" href="immagini/favicon3.png">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/universalStandardSite.css">
+        <link rel="stylesheet" type="text/css" href="css/personaggi.css"/>    
+        <link rel="stylesheet" type="text/css" href="css/slideshow.css"/>
+        <script type="text/javascript" src="js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="navuniv">
+            <introsito></introsito>
+        </div>
+        <br>
+        <!-- Contenitore degli elementi della pagina -->
+        <div class = "flexbox-container">
+            <!-- Introduzione -->
+            <div class = "personaggi-intro">
+                <div><i>Dal 1977  a oggi, il franchise di Star Wars ci ha regalato innumerevoli momenti indimenticabili
+                    e altrettanti personaggi entrati nella memoria colletiva, che si tratti di umanoidi, robot o creature di ogni genere. 
+                    Di seguito una galleria di figure immortali che popolano quella galassia lontana lontana 
+                    immaginata quattro decenni or sono da George Lucas.</i>
+                </div>
+            </div>
+            </br>
+            <!--Bottoni di scelta della trilogia-->
+            <div class="trilogie-bottoni">
+                <div id="apriTrilogia1" style="flex-basis:200px">Episodi I-III</div>
+                <div id="apriTrilogia2" style="flex-basis:200px">Episodi IV-VI</div>
+                <div id="apriTrilogia3" style="flex-basis:200px">Episodi VII-IX</div>
+            </div>
+            </br>
+            <!-- Slideshow -->
+            <div class = "mySlideshow_container">
+                <!-- Immagini e testo delle slide -->
+                <div class = "mySlide fader" id = "slide1">
+                    <div class="numbertext">1/5</div>
+                    <img src = "immagini/slides_immagini/hello_there.gif" style="width:50%; height:auto">
+                    <p class = "text">
+                        Scorri qui per avere informazioni generali sugli abitanti della galassia ideata da George Lucas, oppure scegli una trilogia per vederne i protagonisti.
+                    </p>
+                </div>
+                <div class = "mySlide fader" id = "slide2">
+                    <div class="numbertext">2/5</div>
+                    <img src="immagini/slides_immagini/jedi.png" style="width:50%; height:auto">
+                    <p class = "text">
+                        Un <b>Jedi</b> era un membro dell'Ordine Jedi che ha studiato, servito ed usato le energie mistiche della Forza. 
+                        I Jedi combattono per portare pace e giustizia nella Repubblica Galattica, in genere contro i Sith, i loro acerrimi nemici nonché cultori del Lato Oscuro. 
+                        I principi fondamentali che ogni Jedi deve rispettare sono:
+                        Non ci sono Emozioni, c'è Pace;
+                        non c'è Ignoranza, c'è Conoscenza;
+                        non ci sono Passioni, c'è Serenità;
+                        non c'è Caos, c'è Armonia;
+                        non c'è Morte, c'è la Forza.
+                    </p>
+                </div>
+                <div class = "mySlide fader" id = "slide3">
+                    <div class="numbertext">3/5</div>
+                    <img src="immagini/slides_immagini/sith.png" style="width:50%; height:auto">
+                    <p class = "text">
+                        L' <b>Ordine Sith</b> era un gruppo di sensibili alla Forza che utilizzavano il lato oscuro senza timori o limiti di sorta. 
+                        Originariamente, il termine "Sith" si riferiva alla specie nativa del pianeta Korriban che venne poi soggiogata e governata dai Jedi oscuri esiliati dalla Repubblica Galattica.
+                        A seguito di secoli di meticciato (culturale e genetico), la parola "Sith" non venne più utilizzata per identificare una razza, ma bensì l'appartenenza e la dedizione alla filosofia e agli insegnamenti del lato oscuro. 
+                        Il Codice dei Sith:
+                        "La Pace è solo una menzogna, c'è solo la Passione.
+                        Attraverso la Passione, Io acquisto Forza.
+                        Attraverso la Forza, Io acquisto Potere.
+                        Attraverso il Potere, Io acquisto la Vittoria.
+                        Attraverso la vittoria, Io spezzo le mie catene.
+                        La Forza mi renderà libero."
+                    </p>
+                </div>
+                <div class = "mySlide fader" id = "slide4">
+                    <div class="numbertext">4/5</div>
+                    <img src="immagini/slides_immagini/r2d2.png" style="width:50%; height:auto">
+                    <p class = "text">
+                        Un <b>droide</b> è un qualsiasi robot presente nell'universo fantascientifico di Star Wars. 
+                        I droidi sono diffusi in ogni angolo della galassia e costituiscono un pilastro fondamentale della sua economia; 
+                        per questo appaiono in quasi ogni opera del franchise.
+                        Si presentano in una grande varietà di forme in base ai compiti che sono chiamati a svolgere, che variano da attività di alto profilo, come la medicina, fino a scopi militari o lavori pesanti. 
+                        Sebbene siano macchine robotiche, posseggono vari livelli di intelligenza artificiale e di coscienza.
+                        Alcuni di essi hanno ricoperto ruoli molto importanti in tutte e tre le trilogie e sono entrati nella cultura pop, basti pensare a R2-D2, C3-PO e BB-8.
+                        Il termine nasce come aferesi di "androide" ed è un marchio registrato della Lucasfilm. 
+                        Si è poi diffuso nella letteratura e nel cinema, soprattutto nel campo della fantascienza, come sinonimo di androide o robot.
+                    </p>
+                </div>
+                <div class = "mySlide fader" id = "slide5">
+                    <div class="numbertext">5/5</div>
+                    <img src="immagini/slides_immagini/Chewbacca.png" style="width:50%; height:auto">
+                    <p class = "text">
+                        La galassia situata lontano lontano dalla nostra, nata dall’incredibile mente creatrice di George Lucas è popolata di una serie infinita di personaggi, non solo umani
+                        ma anche animali e vegetali, di forma umanoide o meno. 
+                        Tra di esse figurano diversi livelli di civilizzazione: da specie che posseggono un grado di cultura paragonabile a quello degli umani, a popoli primitivi, fino a razze selvatiche. 
+                        Esempi principali : i <b>Wokiee</b>, specie di giganti pelosi a cui appartiene Chewbacca, fedele co-pilota di Han Solo, ma anche i Jawa, cercatori di resti tecnologici che possiamo vedere diverse volte nei film, 
+                        ma anche Jabba the Hutt, gli Ewoks, i Gungan di cui fa parte Jar Jar Binks, senza dimenticare l'alieno <b>Yoda</b>, uno dei personaggi più famosi e misteriosi della saga, tornato in voga grazie a Baby Yoda, personaggio della serie tv "The Mandalorian".
+                    </p>
+                </div>
+                <!-- Bottoni per andare a vanti e indietro-->
+                <a class="prevButton" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="nextButton" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <!-- Bottoni dot per spostarmi non sequenzialmente -->
+            <div style="text-align:center">
+                <span class="dot" onclick = "currentSlide(0)"></span>
+                <span class="dot" onclick = "currentSlide(1)"></span>
+                <span class="dot" onclick = "currentSlide(2)"></span>
+                <span class="dot" onclick = "currentSlide(3)"></span>
+                <span class="dot" onclick = "currentSlide(4)"></span>
+            </div>
+        </div>
+        </div>
+        <br>
+        <!-- Footer -->
+        <div id="footeruniv">
+            <endsito></endsito>
+        </div>
+        <script type="text/javascript" src="js/footerUniversale.js"></script>
+        <script src="js/personaggi.js" type="text/javascript" lang="javascript"></script>
+        <script type="text/javascript" src="js/navbarUniversale.js"></script>
+    </body>
+    
+</html>

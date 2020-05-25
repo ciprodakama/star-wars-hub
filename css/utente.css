@@ -1,0 +1,99 @@
+.containerUtente {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.utente {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 900px;
+    height: 570px;
+    min-width: 900px;
+    min-height: 570px;
+    background: rgb(52, 58, 64);
+    color: #fff;
+    border-radius: 5%;
+    padding-top: 30px;
+    margin-bottom: 10px;
+}
+
+.containerDati {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.valoriutente{
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.risultatoQuiz {
+    box-shadow: 10px 10px 5px #dedede;
+    height: 309px;
+    width: 550px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.testoRisultato{
+    font-size: 26px;
+}
+
+.testoSith{
+    color : #c90a0a;
+}
+
+.testoJedi{
+    color: #ecd031;
+}
+
+.testoIndeciso{
+    color : #159220;
+}
+
+.quizNonFatto{
+    color : #989c95;
+}
+
+.containerQuiz {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.stileErrore h5{
+    font-size: 22px;
+    text-align: center;
+    color: red;
+}
+
+.stileInput input[type="password"]{
+    border: none;
+    outline: none;
+    height: 35px;
+}
+
+.stileP p{
+    margin-top: 5px;
+    padding-right: 8px;
+}
+
+.aspettoBottoneCancellaQuiz{
+    margin-top: 8px;
+}
+
+.containerAcquisti{
+    display: block;
+
+}
+
+.containerNotAcquisti{
+    display: none;
+
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>STAR WARS HUB</title>
+        <meta name="viewport" content="width=device−width, initial−scale=1"/></meta>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>      
+        <script src="js/quizScript.js" type="text/javascript" lang="javascript"></script>
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <link rel="icon" href="immagini/favicon3.png">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/universalStandardSite.css">
+        <link rel="stylesheet" type="text/css" href="css/quiz.css">
+        <script type="text/javascript" src="js/vue.min.js"></script>
+    </head>
+   <body onload="inizializzazioneDati();">
+        <!--Caricamento della navbar universale tramite VueJS-->
+        <div id="navuniv">
+            <introsito></introsito>
+        </div>
+        <br>
+        <h3 align="center" class="elementiDaTogliere">Benvenuto nella sezione QUIZ!</h3>
+        <p align="center" class="elementiDaTogliere">Scopri a quale dei due potenti lati della forza appartieni! Clicca le immagini, conferma la tua scelta e saprai di che pasta sei fatto!<br></p>
+        <div class="testoQuiz">
+            <!--Testo delle domande e testi finali del risultato-->
+            <p align="center" id="domandaQuiz" class="elementiDaTogliere"></p>
+            <h2 align="center" id="testoRisultato" class="elementiFinali" style="font-family:starwars_v1;"></h2>
+            <h4 align="center" id="sottoTestoRisultato" class="elementiFinali" style="font-family:starwars_v1;"></h4>
+        </div>
+        <div class="containerFlexRow">
+            <!--Bottoni delle scelte-->
+            <button id="immSin" class="immaginiQuiz contornoNero elementiDaTogliere"></button>
+            <button id="immDes" class="immaginiQuiz contornoNero elementiDaTogliere"></button>    
+        </div>
+        <div class="containerFlexRow bottoneConfermaQuiz">
+            <!--Bottone per proseguire nel quiz-->
+            <button id="modificaTesto" class="btn btn-primary btn-lg bg-dark elementiDaTogliere" style="border-color: black">Confermo la mia scelta!</button>
+        </div>
+        <div class="containerFlexRow">
+            <!--Immagine risultato-->
+            <button id="immRisultato" class="risultatoQuiz elementiFinali"></button>
+        </div>
+        <div class="containerSalvaQuiz">
+            <!--Audio in base ai vari finali. Non è stato possibile caricarli dinamicamente in un solo elemento,
+                quindi vengono caricati tutti e poi avviato solo quello opportuno alla fine-->
+            <audio id="finaleBuono" controls class="stileAudio" src="sound/FinaleBuono.mp3"></audio>
+            <audio id="finaleIndeciso" controls class="stileAudio" src="sound/RisultatoIndeciso.mp3"></audio>
+            <audio id="finaleCattivo" controls class="stileAudio" src="sound/MarciaImperiale.mp3"></audio>
+            <br>
+            <h4 class="elementiFinali">Desideri salvare il risultato del quiz nel tuo account?</h4>
+            <p class="elementiFinali">P.S. Ricorda che ogni quiz precedente verrà sovrascritto</p>
+            <button id="bottoneSalvaQuiz" class="btn btn-primary btn-lg elementiFinali" style="background-color: rgb(0, 129, 6); border-color: black">Clicca qui per salvarlo confermando le credenziali</button>
+            <br>
+        </div>
+        <br>
+        <!--Caricamento del footer universale tramite VueJS-->
+        <div id="footeruniv">
+            <endsito></endsito>
+        </div>
+        <script type="text/javascript" src="js/footerUniversale.js"></script>
+        <script type="text/javascript" src="js/navbarUniversale.js"></script>
+    </body>
+</html>

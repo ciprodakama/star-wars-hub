@@ -1,0 +1,334 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("../immagini/cielo_stelle.jpg");
+    overflow: hidden;
+}
+/*Effetto di fade nella parte alta della pagina per dare l'impressione che le scritte si stiano allontanando*/
+.fader {
+  position: relative;
+  width: 100%;
+  min-height: 60vh; /*vh: percentuale di viewport*/
+  top: -100px;
+  background-image: linear-gradient(0deg, transparent, url("immagini/cielo_stelle.jpg") 75%);
+  z-index: 1;
+} 
+/*Intro: A long time ago...*/
+.intro{
+  position: absolute;
+  top: 30%;
+  left:40%;
+  z-index: 1;
+  color: rgb(75,213,238);
+  font-weight:400;
+  font-size:30px;
+  opacity:0;
+}
+/*Animazione dell'intro*/
+.animate-intro{
+  animation: intro 4s ease-out 5s;
+}
+
+@keyframes intro{
+  0%{
+    opacity:0;
+  }
+  20%{
+    opacity:1;
+  }
+  90%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+  }
+}
+/*Contenitore della scritta scorrevole*/
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #ecd310;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 800%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position:absolute;
+  top:100%;
+  transform-origin: 70% 70%; /*per trasformare posizione di oggetti che si trasformano*/
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+/*Effetto di crawl*/
+.animate-crawl{
+  animation: crawl 33s linear 18.5s;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(10deg)  translateZ(0);
+  }
+  90%{
+    opacity:0.7;
+  }
+  100% { 
+    opacity:0.1;
+    top: -6000px;
+    transform: rotateX(15deg) translateZ(-1000px);
+  }
+}
+/*Logo Star Wars*/
+#logo{
+  position: absolute;
+  top: 25%;
+  left:35%;
+  z-index: 1;
+  opacity:1;
+  width:32em;
+}
+
+#logo img{
+  width:inherit;
+}
+/*Animazioni del logo*/
+.animate-logo{
+  animation-name: startAnimation, secondAnimation, finalAnimation;
+  animation-duration: 4.5s, 10s, 10s;
+  animation-delay: 0s, 9.5s, 51s; 
+  animation-timing-function: ease-out, ease-in-out, ease-out;
+  animation-fill-mode: forwards;
+}
+/*Animazione a scomparsa del logo quando si fa click sul bottone*/
+@keyframes startAnimation{
+  0%{
+    opacity:1;
+    transform: scale(1);
+    width:32em;
+  }
+  50%{
+    opacity:1;
+    width:32em;
+  }
+  100%{
+    opacity:0;
+    transform: scale(0.1);
+    width:32em;
+  }
+}
+/*Animazione del logo simile ai film*/
+@keyframes secondAnimation{
+  0%{
+    opacity:1;
+    transform: scale(2.75);
+    width:32em;
+  }
+  50%{
+    opacity:1;
+    width:32em;
+  }
+  100%{
+    opacity:0;
+    transform: scale(0.1);
+    width:32em;
+  }
+}
+/*Animazione con cui logo ricompare e si fissa sullo schermo*/
+@keyframes finalAnimation{
+  0%{
+    opacity:0;
+    transform: scale(0.5);
+    width:32em;
+  }
+  50%{
+    opacity:1;
+    width:32em;
+  }
+  100%{
+    opacity:1;
+    width:32em;
+  }
+}
+/*Bottone per avviare animazione*/
+#avvia-animazione{
+  position:absolute;
+  color: black;
+  visibility: visible;
+  z-index:1;
+  bottom:45%;
+  left: 42%;
+  right: 42%;
+}
+
+/*Per adattarmi a schermi di dimensioni diverse*/
+@media screen and(min-width:2000px){
+  #logo{
+    top: 10%;
+    left:25%;
+  }
+  #avvia-animazione{
+    bottom:65%;
+    left:39%;
+  }
+}
+
+@media screen and (max-width:1800px){
+  .intro{
+    top: 25%;
+    left:35%;
+  }
+  .star-wars{
+    font-weight: 500;
+    letter-spacing: 5px;
+  }
+  #logo{
+    top: 18%;
+    left:32%;
+  }
+  #avvia-animazione{
+    bottom:57%;
+    left:41.3%;
+  }
+  @keyframes secondAnimation{
+    0%{
+      opacity:1;
+      transform: scale(2.00);
+      width:32em;
+    }
+    50%{
+      opacity:1;
+      width:32em;
+    }
+    100%{
+      opacity:0;
+      transform: scale(0.1);
+      width:32em;
+    }
+  }
+}
+
+@media screen and (max-width:750px){
+  .intro{
+    top: 25%;
+    left:20%;
+  }
+  .star-wars{
+    font-size: 650%;
+    font-weight: 400;
+    letter-spacing: 4px;
+    line-height: 125%;
+  }
+  .animate-crawl{
+    animation: crawl 22s linear 18.5s;
+  }
+  #logo{
+    top: 20%;
+    left:10%;
+    transform: scale(0.7);
+  }
+  .animate-logo{
+    animation-name: startAnimation, secondAnimation, finalAnimation;
+    animation-duration: 4.5s, 10s, 10s;
+    animation-delay: 0s, 9.5s, 40s; 
+    animation-timing-function: ease-out, ease-in-out, ease-out;
+    animation-fill-mode: forwards;
+  }
+  #avvia-animazione{
+    bottom:55%;
+    left:30%;
+    transform: scale(0.8);
+  }
+  @keyframes startAnimation{
+    0%{
+      opacity:1;
+      transform: scale(1);
+      width:25em;
+    }
+    50%{
+      opacity:1;
+      width:25em;
+    }
+    100%{
+      opacity:0;
+      transform: scale(0.1);
+      width:25em;
+    }
+  }
+  @keyframes secondAnimation{
+    0%{
+      opacity:1;
+      left:15%;
+      transform: scale(1.25);
+      width:25em;
+    }
+    50%{
+      opacity:1;
+      width:25em;
+    }
+    100%{
+      opacity:0;
+      transform: scale(0.1);
+      width:27em;
+    }
+  }
+}
+
+@media screen and (max-width:550px){
+  #logo{
+    top: 20%;
+    left:2%;
+    transform: scale(0.6);
+  }
+  .intro{
+    top: 25%;
+    left: 10%;
+  }
+  @keyframes startAnimation{
+    0%{
+      opacity:1;
+      transform: scale(0.8);
+      width:25em;
+    }
+    50%{
+      opacity:1;
+      width:25em;
+    }
+    100%{
+      opacity:0;
+      transform: scale(0.1);
+      width:25em;
+    }
+  }
+  @keyframes secondAnimation{
+    0%{
+      opacity:1;
+      left: 5%;
+      transform: scale(1);
+      width:25em;
+    }
+    50%{
+      opacity:1;
+      width:25em;
+    }
+    100%{
+      opacity:0;
+      transform: scale(0.1);
+      width:27em;
+    }
+  }
+}

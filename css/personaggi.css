@@ -1,0 +1,48 @@
+*{box-sizing:border-box} /*CSS reset: viene applicato a tutti gli elementi*/
+
+body{
+    font-family:Verdana, sans-serif;
+}
+/*Flexbox contenente gli elementi edlla pagina*/
+.flexbox-container{
+    display:flex;
+    flex-direction:column;
+}
+/*Scritta introduttiva fra navbar e bottoni*/
+.personaggi-intro{
+    margin:auto;
+    position:relative;
+    width:60%;
+    word-wrap : break-word; /*Usato per andare a capo senza interrompere a metà una parola*/
+    text-align: center;
+    font-size: 17px;
+    color:black;
+    font-style: Arial;
+}
+/*Bottoni per scegliere trilogia*/
+.trilogie-bottoni{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #343a40;
+    color: #ecd310;
+    text-decoration:underline;
+}
+/*Effetto quando si fa click sul bottone*/
+#apriTrilogia1:hover, #apriTrilogia2:hover, #apriTrilogia3:hover{
+    color:white;
+    text-decoration: underline;
+}
+/*Per adattare scritte a schermi di dimensione ridotta*/
+@media (max-width: 1700px){
+    .personaggi-intro{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:1000px){
+    .personaggi-intro{
+        font-size: 12px;
+    }
+}

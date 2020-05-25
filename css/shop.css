@@ -1,0 +1,62 @@
+/* Ho alterato manualmente i valori standard, disabled, focus e hover di btn-primary */
+/* Essendo di Bootstrap avevano uno stile già definito che però non era in linea con il sito */
+.btn-primary {
+  color: rgb(0, 0, 0);
+  background-color: #ecd031;
+  border-color: #000000; 
+}
+
+.btn-primary:disabled  {
+  color: rgb(0, 0, 0);
+  background-color: #eeeeee;
+  border-color: #000000; 
+}
+
+.btn-primary:focus, .btn-primary:hover{
+  background-color: #343a40;
+  color: white;
+  border-color: black;
+  box-shadow: none;
+}
+
+.thumbnail{
+  height: 100%;
+}
+
+.item.list-group-item
+{
+  float: none;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* Per far cambiare colore quando l'utente fa hover su un prodotto */
+/* La proprietà è comune al elementi pari e dispari */
+.item.list-group-item:nth-of-type(odd):hover, .item.list-group-item:hover
+{
+  background: #e4ac14;
+}
+
+/* Distinguo dai pari per dare contrasto alla grid di elementi cambiando colore dello sfondo */
+.item.list-group-item:nth-of-type(odd)
+{
+  background: #eeeeee;
+}
+
+/* Per posizionare immagine a destra del container */
+/* Provato a definire da qui le dimensioni dell'immagine ma l'effetto risulta peggiore */
+.item.list-group-item img
+{
+  float: right;
+  margin-left: 0.1cm;
+  /*
+  width: 100px;
+  height: 100px;
+  */
+}
+
+
+.img[Small_Yoda] {
+  height: 100px;
+  width: 100px;
+}
